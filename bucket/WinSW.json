@@ -4,13 +4,13 @@
     "version": "2.11.0",
     "url": [
         "https://github.com/kohsuke/winsw/releases/download/v2.11.0/WinSW.NET2.exe#/WinSW.exe",
-        "https://github.com/kohsuke/winsw/releases/download/v2.7.0/sample-minimal.xml",
-        "https://github.com/kohsuke/winsw/releases/download/v2.7.0/sample-allOption.xml"
+        "https://github.com/kohsuke/winsw/releases/download/v2.11.0/sample-minimal.xml",
+        "https://github.com/kohsuke/winsw/releases/download/v2.11.0/sample-allOption.xml"
     ],
     "hash": [
         "f3d3f26f3de165daca80e3161af53b0eb5bb5e00806810b36c7bf05b79691258",
-        "4fcdeca63faf6d272d34e88e3185fab03018f5153dd2bf3d9bf0f49bae7c4f59",
-        "f03ea297d6a567e14e14c0f28ae1ce894c72e80254234fae0da98398172fddd6"
+        "9353CD84837CE06A593D3C010BAF4A2B9362B45246BE262155EE33627EB1FD28",
+        "1AA4D6FD904A7AF237456DACFAD7B8793C1A52C0853A2CECEB104BD4E9E9DB63"
     ],
     "bin": "WinSW.exe",
     "checkver": "github",
