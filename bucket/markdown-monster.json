@@ -1,13 +1,13 @@
 {
-    "version": "1.26.14",
+    "version": "1.27",
     "description": "Markdown editing and weblog publishing tool",
     "homepage": "https://markdownmonster.west-wind.com",
     "license": {
         "identifier": "Proprietary",
         "url": "https://markdownmonster.west-wind.com/purchase.aspx#License"
     },
-    "url": "https://raw.githubusercontent.com/RickStrahl/MarkdownMonsterReleases/master/v1.26/MarkdownMonsterSetup-1.26.14.exe",
-    "hash": "10e45828433dbda642aa69eff33ba95c535310312a69f2799bb45ab59f55a3c2",
+    "url": "https://raw.githubusercontent.com/RickStrahl/MarkdownMonsterReleases/master/v1.27/MarkdownMonsterSetup-1.27.exe",
+    "hash": "db80d0fa00671bab237c0d0b835625fbabf08cf3c9eced465f9644bdd085e586",
     "innosetup": true,
     "pre_install": "New-Item \"$dir\\_IsPortable\" | Out-Null",
     "bin": [
