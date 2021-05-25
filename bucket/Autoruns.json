@@ -59,7 +59,10 @@
             ]
         }
     },
-    "checkver": "Autoruns for Windows\\s+v([\\d.]+)</h1",
+    "checkver": {
+        "url": "https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns",
+        "regex": "Autoruns for Windows v([\\d.]+)</h1>"
+    },
     "autoupdate": {
         "url": "https://download.sysinternals.com/files/Autoruns.zip"
     }
