@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/Ash258/Scoop-Core/featArmBasicManifest/schema.json",
     "version": "7.1.3",
     "description": "PowerShell Core. Cross-Platform task automation and configuration management framework/tool.",
     "homepage": "https://github.com/PowerShell/PowerShell",
@@ -15,6 +16,10 @@
         "32bit": {
             "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/PowerShell-7.1.3-win-x86.zip",
             "hash": "ecfd51545084d9b791874062c39eb0c7c7dd2991265ee7f4dc5064995a614e6c"
+        },
+        "arm64": {
+            "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.1.3/PowerShell-7.1.3-win-arm64.zip",
+            "hash": "1cba41a2ecfe7745d376efde14499db59496455ebcb658c743a6297af11ced38"
         }
     },
     "installer": {
@@ -61,6 +66,7 @@
     "persist": "profile.ps1",
     "checkver": "github",
     "autoupdate": {
+        "archive": true,
         "changelog": "https://github.com/PowerShell/PowerShell/releases/tag/v$version",
         "architecture": {
             "64bit": {
@@ -68,6 +74,9 @@
             },
             "32bit": {
                 "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-x86.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-arm64.zip"
             }
         },
         "hash": {
