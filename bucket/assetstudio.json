@@ -1,16 +1,35 @@
 {
     "homepage": "https://github.com/Perfare/AssetStudio",
-    "description": "Tool for exploring, extracting and exporting Unity assets and assetbundles.",
-    "version": "0.15.47",
+    "description": "AssetStudio is a tool for exploring, extracting and exporting assets and assetbundles.",
+    "version": "0.15.49",
     "license": "MIT",
-    "url": "https://github.com/Perfare/AssetStudio/releases/download/v0.15.47/AssetStudio.v0.15.47.zip",
-    "hash": "542BF3E416656CC28DB45F648FF2735B57E97C8207C8025C7A0CF792D85CBD91",
-    "bin": "AssetStudioGUI.exe",
-    "shortcuts": [["AssetStudioGUI.exe", "AssetStudio"]],
+    "architecture": {
+        "64bit": {
+            "url": "https://ci.appveyor.com/api/projects/Perfare/assetstudio/artifacts/AssetStudioGUI%2Fbin%2FAssetStudio.v0.15.49.zip?pr=false",
+            "hash": "15cd196822e06aa4cb0da3f01b0b0caebd988b72e43267266a9b8ba118cc0d9d",
+            "shortcuts": [
+                [
+                    "AssetStudioGUI.exe",
+                    "Asset Studio"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://ci.appveyor.com/api/projects/Perfare/assetstudio/artifacts/AssetStudioGUI%2Fbin%2FAssetStudio.v0.15.49.zip?pr=false",
+            "hash": "15cd196822e06aa4cb0da3f01b0b0caebd988b72e43267266a9b8ba118cc0d9d",
+            "shortcuts": [
+                [
+                    "AssetStudioGUI.exe",
+                    "Asset Studio"
+                ]
+            ]
+        }
+    },
     "checkver": {
-        "github": "https://github.com/Perfare/AssetStudio"
+        "url": "https://ci.appveyor.com/api/projects/Perfare/assetstudio/branch/master",
+        "jp": "$.build.version"
     },
     "autoupdate": {
-        "url": "https://github.com/Perfare/AssetStudio/releases/download/v$version/AssetStudio.v$version.zip"
+        "url": "https://ci.appveyor.com/api/projects/Perfare/assetstudio/artifacts/AssetStudioGUI%2Fbin%2FAssetStudio.v$version.zip?pr=false"
     }
 }
