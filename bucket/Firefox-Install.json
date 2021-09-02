@@ -1,17 +1,17 @@
 {
-    "version": "88.0.1",
+    "version": "91.0.2",
     "description": "Popular open source web browser.",
     "homepage": "https://www.mozilla.org/firefox/",
     "license": "MPL-2.0",
     "changelog": "https://www.mozilla.org/en-US/firefox/84.0.2/releasenotes/",
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/88.0.1/win64/en-US/Firefox%20Setup%2088.0.1.exe#/setup.exe",
-            "hash": "sha512:3fa03729c729adeae1689b07e2340abb53941ed58277da004aa071b20eba7d4bb81ba39909a1f9c8635228dc36d73839771ba2882215f08e7a20fef4ed517608"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/91.0.2/win64/en-US/Firefox%20Setup%2091.0.2.exe#/setup.exe",
+            "hash": "sha512:73b1b950badfb875847539996d1b186977d3249ce324193c1cef8d7c070c3a1c99b4917f7946effb18f8aee4ac94ca8456688b06544648d2b14a462a01b861cd"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/88.0.1/win32/en-US/Firefox%20Setup%2088.0.1.exe#/setup.exe",
-            "hash": "sha512:9e4ee1c92782688d713d1a2902f7bceb79a3bbc25fdc0691dad7d4c6dbf4b7427666c662f458804e3b3a7bb738eaac2009a34bf388ff1710589125a1a4ae8ead"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/91.0.2/win32/en-US/Firefox%20Setup%2091.0.2.exe#/setup.exe",
+            "hash": "sha512:d4ada3f9e6d04f030eede5cababa63eb7225a3014558e3727636d3e7ab9ea30f30a68317264580413c8b4f7e0ac5bce0a4e31db0ea81fd3b81f5e43355092f0a"
         }
     },
     "pre_download": "Assert-Administrator",
