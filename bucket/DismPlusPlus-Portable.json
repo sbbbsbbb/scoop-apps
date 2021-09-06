@@ -1,10 +1,11 @@
 {
-    "version": "10.1.1001.10",
-    "description": "A gatis Windows utility similar to DISM, but with a GUI and based on CBS",
+    "version": "10.1.1002.1",
+    "description": "DISM++. A gatis Windows utility similar to DISM, but with a GUI and based on CBS",
     "homepage": "https://www.chuyu.me",
     "license": "Unknown",
-    "url": "http://cdn.chuyu.me/Dism++10.1.1001.10_d4ba4eb035254b3326d6adc6638bc9c8daea7018.zip",
-    "hash": "sha1:d4ba4eb035254b3326d6adc6638bc9c8daea7018",
+    "changelog": "https://github.com/Chuyu-Team/Dism-Multi-language/blob/master/UpdateHistory.md",
+    "url": "https://github.com/Chuyu-Team/Dism-Multi-language/releases/download/v10.1.1002.1/Dism++10.1.1002.1.zip",
+    "hash": "bd782ba834a77661db0b272c00afd5377404b23cb26783507ded145f4c72f9a6",
     "bin": [
         "DISM++x86.exe",
         "DISM++x64.exe"
@@ -20,14 +21,9 @@
         ]
     ],
     "checkver": {
-        "url": "http://www.chuyu.me/en/",
-        "regex": "Dism\\+\\+([\\w.]+)_(?<hash>[a-fA-F\\d]{40})\\.zip"
+        "github": "https://github.com/Chuyu-Team/Dism-Multi-language"
     },
     "autoupdate": {
-        "url": "http://cdn.chuyu.me/Dism++$version_$matchHash.zip",
-        "hash": {
-            "url": "http://www.chuyu.me/en/",
-            "regex": "Dism\\+\\+[\\w.]+_$sha1\\.zip"
-        }
+        "url": "https://github.com/Chuyu-Team/Dism-Multi-language/releases/download/v$version/Dism++$version.zip"
     }
 }
