@@ -1,5 +1,5 @@
 {
-    "version": "8.48",
+    "version": "8.51",
     "description": "A small program to prevent system Shutdown, Stand By, Turn Off, Restart, Hibernate.",
     "homepage": "https://www.softwareok.com/?Download=DontSleep",
     "license": {
