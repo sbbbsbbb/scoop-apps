@@ -1,20 +1,23 @@
 {
-    "version": "0.1.9",
-    "description": "A simple and customizable Discord client",
-    "homepage": "https://lightcord.org",
+    "version": "v0.1.9",
+    "description": "A simple, customizable Discord client.",
+    "homepage": "https://lightcord.org/",
     "license": "MIT",
-    "url": "https://github.com/Lightcord/Lightcord/releases/download/v0.1.9/lightcord-win32-ia32.zip",
-    "hash": "139ed54bccd789324bbc294f1153da83efb0f23d7e79418a7ee3e38b8d22358c",
+    "url": "https://lightcord.org/api/gh/releases/Lightcord/Lightcord/v0.1.9/lightcord-win32.exe",
+    "hash": "1bc025f08c9cf6e5b0666d5b516fdb7fd0fca20f90de3369750d44d446370c10",
+    "bin": "lightcord-win32.exe",
     "shortcuts": [
         [
-            "Lightcord.exe",
+            "lightcord-win32.exe",
             "Lightcord"
         ]
     ],
     "checkver": {
-        "github": "https://github.com/Lightcord/Lightcord"
+        "url": "https://github.com/Lightcord/Lightcord/releases",
+        "regex": "<span class=\"css-truncate-target\" style=\"max-width: 125px\">(.+?)</span>"
     },
     "autoupdate": {
-        "url": "https://github.com/Lightcord/Lightcord/releases/download/v$version/lightcord-win32-ia32.zip"
+        "url": "https://lightcord.org/api/gh/releases/Lightcord/Lightcord/$version/lightcord-win32.exe",
+        "hash": "$url.sha256"
     }
 }

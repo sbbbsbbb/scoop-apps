@@ -1,15 +1,10 @@
 {
-    "version": "8.1.0.36410",
-    "description": "Libre file transfer client supporting multiple protocols.",
-    "homepage": "https://cyberduck.io",
-    "license": "Freeware",
-    "notes": "Additional third party connection profiles can be installed to and found in '%APPDATA%\\Cyberduck\\Profiles'.",
-    "architecture": {
-        "64bit": {
-            "url": "https://update.cyberduck.io/windows/Cyberduck-Installer-8.1.0.36410.msi",
-            "hash": "b32222a10dc7d20189e1a38af9672f502be8ce70be78b54958023ef14d4bb847"
-        }
-    },
+    "homepage": "https://cyberduck.io/",
+    "description": "Multiple protocols libre file transfer client",
+    "license": "GPL-2.0-or-later",
+    "version": "7.10.2.35432",
+    "url": "https://update.cyberduck.io/windows/Cyberduck-Installer-7.10.2.35432.msi",
+    "hash": "f432f921e082069ebba4201aaa3998a172548c73aa1b5c3aeea34517c96dc30d",
     "extract_dir": "Cyberduck",
     "shortcuts": [
         [
@@ -18,14 +13,11 @@
         ]
     ],
     "checkver": {
-        "url": "https://cyberduck.io/download/",
-        "regex": "Cyberduck-Installer-([\\d.]+)\\.exe"
+        "url": "https://cyberduck.io/changelog/",
+        "re": "Cyberduck-Installer-([\\d.]+).msi"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://update.cyberduck.io/windows/Cyberduck-Installer-$version.msi"
-            }
-        }
-    }
+        "url": "https://update.cyberduck.io/windows/Cyberduck-Installer-$version.msi"
+    },
+    "notes": "Additional third party connection profiles can be installed to and found in '%APPDATA%\\Cyberduck\\Profiles'."
 }
