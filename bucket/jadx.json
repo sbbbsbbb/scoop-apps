@@ -1,38 +1,25 @@
 {
-    "homepage": "https://github.com/skylot/jadx",
-    "description": "Dex to Java decompiler.",
     "version": "1.3.0",
-    "license": "Apache 2.0",
-    "hash": "29c831c49f53df86c65b5d0c94b8335c7cf78b64b42cc222c6ce9b73ebc6d731",
-    "url": "https://github.com/skylot/jadx/releases/download/v1.3.0/jadx-1.3.0.zip",
+    "description": "Dex to Java decompiler",
+    "homepage": "https://github.com/skylot/jadx",
+    "license": "Apache-2.0",
     "suggest": {
-        "JDK": [
-            "java/oraclejdk",
-            "java/openjdk"
-        ]
+        "JRE": "java/openjdk"
     },
-    "checkver": "github",
-    "autoupdate": {
-        "url": "https://github.com/skylot/jadx/releases/download/v$version/jadx-$version.zip"
-    },
+    "url": "https://github.com/skylot/jadx/releases/download/v1.3.0/jadx-1.3.0.zip",
+    "hash": "29c831c49f53df86c65b5d0c94b8335c7cf78b64b42cc222c6ce9b73ebc6d731",
     "bin": [
-        "bin/jadx.bat",
-        "bin/jadx-gui.bat"
+        "bin\\jadx.bat",
+        "bin\\jadx-gui.bat"
     ],
     "shortcuts": [
         [
-            "bin/jadx-gui.bat",
-            "JADX GUI",
-            "",
-            "jadx-logo.ico"
+            "bin\\jadx-gui.bat",
+            "jadx-gui"
         ]
     ],
-    "pre_install": [
-        "Add-Type -AssemblyName System.IO.Compression.FileSystem",
-        "$zip = [System.IO.Compression.ZipFile]::OpenRead(\"$dir\\lib\\jadx-gui-$version.jar\")",
-        "$zip.Entries | Where-Object { $_.FullName -eq \"logos/jadx-logo.ico\" } | ForEach-Object {",
-        "[System.IO.Compression.ZipFileExtensions]::ExtractToFile($_, \"$dir\\jadx-logo.ico\", $true)",
-        "}",
-        ""
-    ]
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/skylot/jadx/releases/download/v$version/jadx-$version.zip"
+    }
 }

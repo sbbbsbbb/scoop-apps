@@ -1,33 +1,57 @@
 {
-    "homepage": "https://www.mozilla.org/en-US/firefox/new/",
     "version": "94.0.2",
-    "url": "https://sourceforge.net/projects/portableapps/files/Mozilla%20Firefox%2C%20Portable%20Ed./Mozilla%20Firefox%2C%20Portable%20Edition%2094.0.2/FirefoxPortable_94.0.2_English.paf.exe#/dl.7z",
-    "hash": "sha1:f2e9c8472182ffef75ef7931bcac189c072b33ba",
+    "description": "Popular open source web browser",
+    "homepage": "https://www.mozilla.org/firefox/",
+    "license": "MPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://archive.mozilla.org/pub/firefox/releases/94.0.2/win64/en-US/Firefox%20Setup%2094.0.2.exe#/dl.7z",
+            "hash": "sha512:15051bf1886b22aceeda12f02e7aea8777812fb6791e75cb8aeaeab464227fbdce8aac9911ab778baa170bf9a0c110c05d555db56d5eb9e9399abaa9989f9b8d"
+        },
+        "32bit": {
+            "url": "https://archive.mozilla.org/pub/firefox/releases/94.0.2/win32/en-US/Firefox%20Setup%2094.0.2.exe#/dl.7z",
+            "hash": "sha512:f2d78782dd3eb00513f52e4745ad45b2bc48e4463eaed4c711392c1729f922e428cd0649bec61b35389c03bd4648ab7d1fb1d1ccdc5497f496478e88f97cc486"
+        }
+    },
+    "extract_dir": "core",
     "bin": [
         [
-            "FirefoxPortable.exe",
-            "firefox"
+            "firefox.exe",
+            "firefox",
+            "-profile \"$dir\\profile\""
         ]
     ],
     "shortcuts": [
         [
-            "FirefoxPortable.exe",
-            "Firefox"
+            "firefox.exe",
+            "Firefox",
+            "-profile \"$dir\\profile\""
         ]
     ],
-    "persist": "Data",
-    "post_install": [
-        "Remove-Item -LiteralPath \"$dir\\`$PLUGINSDIR\" -Force -Recurse",
-        "if(!(test-path \"$dir\\FirefoxPortable.ini\")) {",
-        "   Copy-Item \"$dir\\Other\\Source\\FirefoxPortable.ini\" \"$dir\\FirefoxPortable.ini\"",
-        "   (Get-Content \"$dir\\FirefoxPortable.ini\").replace('DisableSplashScreen=false', 'DisableSplashScreen=true') | Set-Content \"$dir\\FirefoxPortable.ini\"",
-        "}"
+    "persist": [
+        "distribution",
+        "profile"
     ],
     "checkver": {
-        "url": "https://sourceforge.net/projects/portableapps/rss?path=/Mozilla%20Firefox%2C%20Portable%20Ed.",
-        "re": "FirefoxPortable_([\\d.]+)_English.paf.exe]]>"
+        "url": "https://www.mozilla.org/en-US/firefox/notes/",
+        "regex": "<div class=\"c-release-version\">([\\d.]+)</div>"
     },
     "autoupdate": {
-        "url": "https://sourceforge.net/projects/portableapps/files/Mozilla%20Firefox%2C%20Portable%20Ed./Mozilla%20Firefox%2C%20Portable%20Edition%20$version/FirefoxPortable_$version_English.paf.exe#/dl.7z"
+        "architecture": {
+            "64bit": {
+                "url": "https://archive.mozilla.org/pub/firefox/releases/$version/win64/en-US/Firefox%20Setup%20$version.exe#/dl.7z",
+                "hash": {
+                    "url": "https://archive.mozilla.org/pub/firefox/releases/$version/SHA512SUMS",
+                    "regex": "$sha512\\s+win64/en-US/$basename"
+                }
+            },
+            "32bit": {
+                "url": "https://archive.mozilla.org/pub/firefox/releases/$version/win32/en-US/Firefox%20Setup%20$version.exe#/dl.7z",
+                "hash": {
+                    "url": "https://archive.mozilla.org/pub/firefox/releases/$version/SHA512SUMS",
+                    "regex": "$sha512\\s+win32/en-US/$basename"
+                }
+            }
+        }
     }
 }
