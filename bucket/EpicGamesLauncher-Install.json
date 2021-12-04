@@ -1,5 +1,5 @@
 {
-    "version": "1.3.0.0",
+    "version": "13.0.3",
     "description": "Epic Games Launcher. Allow players to purchase, install and keep their games up to date",
     "homepage": "https://www.epicgames.com/store/en-US/",
     "license": "Freemium",
@@ -23,7 +23,7 @@
             "$programname = \"Epic Games Launcher*\"",
             "$installpath = \"$dir\\setup.msi_\"",
             "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
-            "$filepath = \"$ProgramFiles\\Epic Games\\Luancher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe\"",
+            "$filepath = \"$ProgramFiles\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe\"",
             "if(((Test-Path -Path $filepath -PathType Leaf) -eq $false) -or ((Get-Command $filepath).Version -lt [System.Version]\"$version\"))",
             "{",
             "   Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null",
@@ -41,8 +41,7 @@
         "if (Test-Path \"$CommonDesktopPath\\$programname.lnk\") {Remove-Item \"$CommonDesktopPath\\$programname.lnk\" -Force}"
     ],
     "checkver": {
-        "url": "https://github.com/microsoft/winget-pkgs/tree/master/manifests/e/EpicGames/EpicGamesLauncher",
-        "regex": "navigation-open Link--primary\" title=\"([\\d.]+)",
-        "reverse": true
+        "url": "https://m.majorgeeks.com/files/details/epic_games_store_launcher.html",
+        "regex": "Epic Games Store Launcher ([\\d.]+)"
     }
 }
