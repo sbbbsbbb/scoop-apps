@@ -1,38 +1,33 @@
 {
-    "description": "Oracle JDK",
+    "description": "Oracle Java Platform, Standard Edition Development Kit (JDK)",
     "homepage": "https://www.oracle.com/java/",
-    "version": "15.0.2-7",
-    "license": "https://www.oracle.com/downloads/licenses/javase-license1.html",
+    "version": "17.0.1",
+    "license": "https://www.oracle.com/downloads/licenses/no-fee-license.html",
     "architecture": {
         "64bit": {
-            "url": "https://download.oracle.com/otn-pub/java/jdk/15.0.2%2B7/0d1cfde4252546c6931946de8db48ee2/jdk-15.0.2_windows-x64_bin.zip",
-            "hash": "92994c5546a3d80d470cd6ba0a6248216f0c069c2a16f64437e4f421775d6be9"
+            "url": "https://download.oracle.com/java/17/archive/jdk-17.0.1_windows-x64_bin.zip",
+            "hash": "97b2db1db24a26a029e58af95260e7bd8226accf4095b7326b7d1b41de5b5bbb"
         }
     },
-    "cookie": {
-        "oraclelicense": "accept-securebackup-cookie"
-    },
-    "extract_dir": "jdk-15.0.2",
+    "extract_dir": "jdk-17.0.1",
     "env_add_path": "bin",
     "env_set": {
         "JAVA_HOME": "$dir"
     },
     "checkver": {
-        "url": "https://www.oracle.com/java/technologies/javase-jdk15-downloads.html",
-        "regex": "(?smi)digest/(?<digest>[\\d-]+)checksum.html(?:.*)otn-pub/java/jdk/(?<path>(?<major>[\\d.]+)(?:\\+|\\%2b)(?<build>[\\d]+)/(?:[a-fA-F0-9]{32})/jdk-(?:.*?)_windows-x64_bin.zip)",
-        "replace": "${major}-${build}",
-        "useragent": "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko"
+        "url": "https://www.oracle.com/java/technologies/downloads",
+        "useragent": "curl/7",
+        "regex": "Java SE Development Kit ([\\d.]+) downloads"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download.oracle.com/otn-pub/java/jdk/$matchPath"
+                "url": "https://download.oracle.com/java/$majorVersion/archive/jdk-$version_windows-x64_bin.zip"
             }
         },
         "hash": {
-            "url": "https://www.oracle.com/webfolder/s/digest/$matchDigestchecksum.html",
-            "find": "$basename.*([a-fA-F0-9]{64})"
+            "url": "$url.sha256"
         },
-        "extract_dir": "jdk-$matchMajor"
+        "extract_dir": "jdk-$version"
     }
 }
