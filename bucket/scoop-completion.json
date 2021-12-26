@@ -1,20 +1,33 @@
 {
-    "version": "0.2.3",
-    "description": "A Scoop tab completion module for PowerShell",
     "homepage": "https://github.com/Moeologist/scoop-completion",
+    "description": "Scoop tab completion, work with powershell",
     "license": "MIT",
-    "url": "https://github.com/Moeologist/scoop-completion/archive/v0.2.3.zip",
-    "hash": "59fcda6e723b2c0bf7430668ccfb57086d82e9472733a01f9f7f9315768b5e5f",
-    "extract_dir": "scoop-completion-0.2.3\\src",
+    "version": "0.2.3",
+    "url": [
+        "https://raw.githubusercontent.com/Moeologist/scoop-completion/v0.2.3/src/scoop-completion.psm1",
+        "https://raw.githubusercontent.com/Moeologist/scoop-completion/v0.2.3/src/scoop-completion.psd1"
+    ],
+    "hash": [
+        "0109e5b5f38c908a8c7b23be62665d1c673b920ba366d64c62c93a5eadea3d9f",
+        "8d777ec993fb27613c387c87db74f9d41e1793afd8c39c64fba8a1e77cc7772c"
+    ],
     "psmodule": {
         "name": "scoop-completion"
     },
-    "checkver": {
-        "url": "https://github.com/Moeologist/scoop-completion/releases/",
-        "regex": "/releases/tag/v([\\d.]+)"
-    },
+    "post_install": [
+        "scoop config alias @{}",
+        "Import-Module scoop-completion"
+    ],
+    "post_install": "Import-Module $env:SCOOP\\modules\\scoop-completion",
+    "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/Moeologist/scoop-completion/archive/v$version.zip",
-        "extract_dir": "scoop-completion-$version\\src"
-    }
+        "url": [
+            "https://raw.githubusercontent.com/Moeologist/scoop-completion/v$version/src/scoop-completion.psm1",
+            "https://raw.githubusercontent.com/Moeologist/scoop-completion/v$version/src/scoop-completion.psd1"
+        ]
+    },
+    "notes": [
+        "To enable completion autoload, you need to add scoop-completion module to PowerShell $PROFILE by running:",
+        "Add-Content -Path $Profile -Value \"`nImport-Module $env:SCOOP\\modules\\scoop-completion\""
+    ]
 }

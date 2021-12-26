@@ -1,31 +1,11 @@
 {
-    "version": "2021.11",
+    "version": "5.2.0",
     "description": "The most popular Python distribution for data science.",
-    "homepage": "https://www.anaconda.com/",
     "license": "BSD-3-Clause",
-    "architecture": {
-        "64bit": {
-            "url": "https://repo.anaconda.com/archive/Anaconda3-2021.11-Windows-x86_64.exe",
-            "hash": "1b3d593d1deb22b835be5c68897075e0fc9dea240ab4191c55674aba259a78ff"
-        },
-        "32bit": {
-            "url": "https://repo.anaconda.com/archive/Anaconda3-2021.11-Windows-x86.exe",
-            "hash": "dc0746dded06cc480328c20b73369803ce98df1971bda669d93859e02c1c0664"
-        }
-    },
-    "pre_install": "Write-Host 'Installing Anaconda 3. This can take up to 30 minutes on an HDD.' -ForegroundColor Magenta",
-    "installer": {
-        "args": [
-            "/S",
-            "/InstallationType=JustMe",
-            "/RegisterPython=1",
-            "/AddToPath=0",
-            "/D=$dir"
-        ]
-    },
-    "uninstaller": {
-        "file": "Uninstall-Anaconda3.exe",
-        "args": "/S"
+    "homepage": "https://www.anaconda.com/",
+    "checkver": {
+        "url": "https://repo.continuum.io/archive",
+        "re": "Anaconda3-([\\d.]+)-Windows"
     },
     "bin": [
         "python.exe",
@@ -35,26 +15,50 @@
             "python3"
         ]
     ],
-    "env_add_path": "Scripts",
+    "pre_install": "Write-Host 'Installing Anaconda 3. This can take up to 30 minutes on an HDD.' -ForegroundColor Magenta",
+    "installer": {
+        "args": [
+            "/S",
+            "/InstallationType=JustMe",
+            "/AddToPath=1",
+            "/RegisterPython=0",
+            "/NoRegistry=1",
+            "/D=$dir"
+        ]
+    },
+    "uninstaller": {
+        "file": "Uninstall-Anaconda3.exe",
+        "args": "/S"
+    },
     "persist": "envs",
-    "checkver": {
-        "url": "https://docs.anaconda.com/anaconda/install/hashes/win-3-64/",
-        "regex": "Anaconda3-([\\d.]+)-Windows"
+    "env_add_path": [
+        "Library/mingw-w64/bin",
+        "Library/usr/bin",
+        "Library/bin",
+        "Scripts"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://repo.continuum.io/archive/Anaconda3-5.2.0-Windows-x86_64.exe"
+        },
+        "32bit": {
+            "url": "https://repo.continuum.io/archive/Anaconda3-5.2.0-Windows-x86.exe"
+        }
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://repo.anaconda.com/archive/Anaconda3-$version-Windows-x86_64.exe",
+                "url": "https://repo.continuum.io/archive/Anaconda3-$version-Windows-x86_64.exe",
                 "hash": {
                     "url": "http://docs.anaconda.com/anaconda/install/hashes/Anaconda3-$version-Windows-x86_64.exe-hash/",
-                    "regex": "$sha256"
+                    "find": "([A-Fa-f\\d]{64})"
                 }
             },
             "32bit": {
-                "url": "https://repo.anaconda.com/archive/Anaconda3-$version-Windows-x86.exe",
+                "url": "https://repo.continuum.io/archive/Anaconda3-$version-Windows-x86.exe",
                 "hash": {
                     "url": "http://docs.anaconda.com/anaconda/install/hashes/Anaconda3-$version-Windows-x86.exe-hash/",
-                    "regex": "$sha256"
+                    "find": "([A-Fa-f\\d]{64})"
                 }
             }
         }
