@@ -1,20 +1,23 @@
 {
-    "homepage": "https://www.xyplorer.com/",
-    "description": "XYplorer is a file manager for Windows.",
-    "version": "20.90.0100",
-    "license": "For Kale",
-    "url": "https://raw.githubusercontent.com/tianzhijiexian/scoop-packages/master/xyplorer.zip",
-    "hash": "7C1BEDF64400A0A22BD2628875D9013B817D1A4D01DF5E0AF1AA900EF700119D",
-    "extract_dir": "",
-    "bin": "XYplorer.exe",
-    "persist": [
-        "Data\\Language.ini",
-        "Data\\XYplorer.ini"
-    ],
+    "version": "17.40.0100",
+    "description": "A file manager for Windows.",
+    "homepage": "https://www.xyplorer.com/free.php",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.xyplorer.com/company.php#legal"
+    },
+    "url": "https://www.xyplorer.com/download/xyplorer_free_noinstall.zip",
+    "hash": "38cb3abc8a699023e5f74fe19c167e91e59be67a09c9e1fc7f589b98324b9ee9",
+    "bin": "XYplorerFree.exe",
     "shortcuts": [
         [
-            "XYPlorer.exe",
-            "XYPlorer"
+            "XYplorerFree.exe",
+            "XYplorer"
         ]
-    ]
+    ],
+    "persist": "Data",
+    "checkver": "XYFreeHash-([\\d.]+)\\.txt",
+    "autoupdate": {
+        "url": "https://www.xyplorer.com/download/xyplorer_free_noinstall.zip"
+    }
 }

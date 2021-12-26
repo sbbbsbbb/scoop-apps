@@ -1,45 +1,43 @@
 {
-    "version": "1.5.5",
-    "description": "A desktop Markdown Block-Reference and Bidirectional-Link note-taking application",
     "homepage": "https://github.com/siyuan-note/siyuan",
-    "license": "Freeware",
+    "description": "SiYuan is a Markdown Block-Reference and Bidirectional-Link note-taking application",
+    "version": "1.5.5-beta3",
+    "license": "Unknown",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/siyuan-note/siyuan/releases/download/v1.5.5/siyuan-1.5.5-win.exe#/dl.zip",
-            "hash": "7d42e23191c5b1b9817d5ea246499ba96049a08b334e35e5acf69f6e7abe6818"
+            "url": "https://github.com/siyuan-note/siyuan/releases/download/v1.5.5-beta3/siyuan-1.5.5-beta3-win.exe#/siyuan.7z",
+            "hash": "023c3d14a825e3660a3c1ac348eff9046f0b23c23d3f6bc6b46fda4456709a65",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\" -Recurse"
+            ]
         },
         "32bit": {
-            "url": "https://github.com/siyuan-note/siyuan/releases/download/v1.5.5/siyuan-1.5.5-win32.exe#/dl.zip",
-            "hash": "d8f1b7d9b5df5dd99f96e0038b39a8a3fa39f3dc20a2167b99f8073a1c59434d"
+            "url": "https://github.com/siyuan-note/siyuan/releases/download/v1.5.5-beta3/siyuan-1.5.5-beta3-win32.exe#/siyuan.7z",
+            "hash": "901debedaa078670b4dc086c4e107772c51a2b3a2e436bbf6468cd2b9f25e9e0",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\" -Recurse"
+            ]
         }
-    },
-    "installer": {
-        "script": [
-            "if ([Environment]::Is64BitOperatingSystem) {",
-            "    Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" $dir -Removal",
-            "} else {",
-            "    Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" $dir -Removal",
-            "}",
-            "Remove-Item \"$dir\\Uninstall SiYuan.exe\"",
-            "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse",
-            "Remove-Item \"$dir\\resources\" -Force -Recurse",
-            "Remove-Item \"$dir\\WinShell.dll\""
-        ]
     },
     "shortcuts": [
         [
-            "SiYuan.exe",
+            "siyuan.exe",
             "思源笔记"
         ]
     ],
-    "checkver": "github",
+    "checkver": {
+        "url": "https://github.com/siyuan-note/siyuan/releases/latest",
+        "regex": "/tree/v([\\d.]+(-[\\w.]+)?)"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-win.exe#/dl.zip"
+                "url": "https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-win.exe#/siyuan.7z"
             },
             "32bit": {
-                "url": "https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-win32.exe#/dl.zip"
+                "url": "https://github.com/siyuan-note/siyuan/releases/download/v$version/siyuan-$version-win32.exe#/siyuan.7z"
             }
         }
     }
