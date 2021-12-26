@@ -12,11 +12,8 @@
             "--portable"
         ]
     ],
-    "persist": "Data",
     "checkver": {
-        "url": "https://api.github.com/repos/pbek/QOwnNotes/releases/latest",
-        "jp": "$.name",
-        "regex": "Release v(.*)"
+        "github": "https://github.com/pbek/QOwnNotes"
     },
     "autoupdate": {
         "url": "https://github.com/pbek/QOwnNotes/releases/download/v$version/QOwnNotes.zip"
