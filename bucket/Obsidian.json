@@ -1,13 +1,12 @@
 {
     "homepage": "https://obsidian.md/",
-    "license": "unknown",
     "version": "0.13.14",
     "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.13.14/Obsidian.0.13.14.exe#/dl.7z",
     "hash": "df82ed43c3f9aed3c1fe2d39516005403aca91304bac2ecd32425a9315ab5836",
     "installer": {
         "script": [
-            "Expand-7ZipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
-            "Remove-Item \"$dir\\`$PLUGINSDIR\",\"$dir\\Uninstall Obsidian.exe\"  -Force -Recurse"
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse"
         ]
     },
     "bin": "Obsidian.exe",
@@ -17,7 +16,9 @@
             "Obsidian"
         ]
     ],
-    "checkver": "Obsidian\\.([\\d.]+)\\.exe",
+    "checkver": {
+        "github": "https://github.com/obsidianmd/obsidian-releases"
+    },
     "autoupdate": {
         "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v$version/Obsidian.$version.exe#/dl.7z"
     }
