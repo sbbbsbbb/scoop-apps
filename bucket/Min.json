@@ -1,18 +1,19 @@
 {
     "homepage": "https://github.com/minbrowser/min",
     "license": "Apache-2.0",
-    "version": "1.17.3",
+    "version": "1.22.1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/minbrowser/min/releases/download/v1.17.3/Min-v1.17.3-win32-x64.zip",
-            "hash": "7a6c8c95de05b59446b821066e0a12b441d262f77ac9fd8324031175f3ec967e"
+            "url": "https://github.com/minbrowser/min/releases/download/v1.22.1/Min-v1.22.1-win32-x64.zip",
+            "hash": "cc4292394af13df35e0de6ef88cb5822859bde56dafd2867c477469ecd594c4e",
+            "extract_dir": "Min-v1.22.1"
         },
         "32bit": {
-            "url": "https://github.com/minbrowser/min/releases/download/v1.17.3/Min-v1.17.3-win32-ia32.zip",
-            "hash": "ee85305e43c24a817accce3dcb68036231516d66943abbb98867e9955cb4c132"
+            "url": "https://github.com/minbrowser/min/releases/download/v1.19.2/Min-v1.19.2-win32-ia32.zip",
+            "hash": "",
+            "extract_dir": "Min-v1.19.2"
         }
     },
-    "extract_dir": "Min-v1.17.3",
     "bin": "Min.exe",
     "shortcuts": [
         [
@@ -24,12 +25,9 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/minbrowser/min/releases/download/v$version/Min-v$version-win32-x64.zip"
-            },
-            "32bit": {
-                "url": "https://github.com/minbrowser/min/releases/download/v$version/Min-v$version-win32-ia32.zip"
+                "url": "https://github.com/minbrowser/min/releases/download/v$version/Min-v$version-win32-x64.zip",
+                "extract_dir": "Min-v$version"
             }
-        },
-        "extract_dir": "Min-v$version"
+        }
     }
 }
