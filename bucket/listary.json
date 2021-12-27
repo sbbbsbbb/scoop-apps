@@ -1,23 +1,29 @@
 {
-    "version": "5.00.2843",
-    "description": "A revolutionary search utility.",
-    "homepage": "https://www.listary.com",
-    "license": "Shareware",
-    "url": "https://www.listary.com/download/ListaryPortable.zip?version=5.00.2843#/ListaryPortable.zip",
-    "hash": "52c82c32fd719e782fd66c0a87f08ba073a93edc06fce60c64219ea0530b5682",
-    "extract_dir": "ListaryPortable",
-    "persist": "UserData",
-    "shortcuts": [
-        [
-            "Listary.exe",
-            "Listary"
-        ]
-    ],
-    "checkver": {
-        "url": "https://www.listary.com/download",
-        "regex": "v([\\d.]+)"
+    "homepage": "https://www.listary.com/",
+    "description": "Listary is a revolutionary search utility for Windows",
+    "version": "6.0.5.16",
+    "url": "https://raw.githubusercontent.com/tianzhijiexian/scoop-packages/master/ListaryInstaller.exe",
+    "hash": "5BAF39CD63E1D07784F8614FE0EC79FBC1F5BA2F4F8A91D0F2B55B24D493A250",
+    "installer": {
+        "file": "ListaryInstaller.exe",
+        "args": [
+            "/dir=\"$dir\"",
+            "/verysilent",
+            "/norestart"
+        ],
+        "keep": true
     },
-    "autoupdate": {
-        "url": "https://www.listary.com/download/ListaryPortable.zip?version=$version#/ListaryPortable.zip"
+    "post_install":[
+        "$env:TARGET_PATH=\"$env:USERPROFILE\\AppData\\Roaming\\Listary\\UserProfile\\Settings\"",
+        "Copy-Item \"$persist_dir\\Preferences.json\" -Destination \"$env:TARGET_PATH\\Preferences.json\" -Force"
+    ],
+    "uninstaller": {
+        "file": "unins000.exe",
+        "args": [
+            "/verysilent",
+            "/norestart",
+            "/suppressmsgboxes"
+        ],
+        "keep": true
     }
 }

@@ -1,22 +1,8 @@
 {
-    "version": "5.88.9346",
-    "description": "Number-one tool for cleaning PC",
-    "homepage": "https://www.ccleaner.com/ccleaner",
-    "license": "Freeware",
-    "url": "https://download.ccleaner.com/portable/ccsetup588.zip",
-    "hash": "22801e499d8542fa8f7fc3e79b22b87a0e7e788f3b5b1ea23d92ab716949af87",
-    "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\ccleaner.ini\")) {",
-        "   Set-Content \"$dir\\ccleaner.ini\" @('[Options]', 'UpdateAuto=0', 'UpdateNotify=0', 'UpdateCheck=0', 'HelpImproveCCleaner=0') -Encoding ASCII",
-        "}",
-        "'winapp.ini', 'winreg.ini', 'winsys.ini' | ForEach-Object {",
-        "   if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" | Out-Null }",
-        "}",
-        "Copy-Item \"$persist_dir\\*\" \"$dir\" -Include 'branding.dll', 'CCleaner.dat' -ErrorAction SilentlyContinue"
-    ],
-    "uninstaller": {
-        "script": "Copy-Item \"$dir\\*\" \"$persist_dir\" -Include 'branding.dll', 'CCleaner.dat' -ErrorAction SilentlyContinue -Force"
-    },
+    "homepage": "https://www.piriform.com/ccleaner",
+    "version": "5.76.8269",
+    "url": "https://www.piriform.com/ccleaner/download/portable/downloadfile#/dl.7z",
+    "hash": "b30f7fb7bdac36c3476b2ef6ad54b745a0278fb3b5e81ab74d904d5071eb8e74",
     "architecture": {
         "64bit": {
             "bin": [
@@ -42,17 +28,13 @@
             ]
         }
     },
-    "persist": [
-        "ccleaner.ini",
-        "winapp.ini",
-        "winreg.ini",
-        "winsys.ini"
-    ],
+    "persist": "ccleaner.ini",
+    "pre_install": "if(!(test-path \"$dir\\ccleaner.ini\")) { Add-Content \"$dir\\ccleaner.ini\" $null }",
     "checkver": {
-        "url": "https://www.ccleaner.com/ccleaner/version-history",
-        "regex": ">v([\\d.]+)"
+        "url": "https://www.piriform.com/ccleaner/download",
+        "re": "<strong>v([\\d.]+)</strong>"
     },
     "autoupdate": {
-        "url": "https://download.ccleaner.com/portable/ccsetup$majorVersion$minorVersion.zip"
+        "url": "https://www.piriform.com/ccleaner/download/portable/downloadfile#/dl.7z"
     }
 }
