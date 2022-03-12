@@ -1,5 +1,5 @@
 {
-    "version": "10.9.10",
+    "version": "10.32.4",
     "description": "App for note taking, organizing, task lists, and archiving",
     "homepage": "https://evernote.com/",
     "license": {
@@ -7,8 +7,8 @@
         "url": "https://evernote.com/legal/terms-of-service"
     },
     "notes": "We don't persist your Evernote data, they are still storaged in \"$env:APPDATA\\Evernote\".",
-    "url": "https://cdn1.evernote.com/boron/win/builds/Evernote-10.9.10-win-ddl-ga-2439-setup.exe#/dl.7z",
-    "hash": "772754e56720504a30f8d59358a2987b4348bc0dca93cbd06b0a4faa303c76c9",
+    "url": "https://cdn1.evernote.com/boron/win/builds/Evernote-10.32.4-win-ddl-ga-3265-c8b59ac451-setup.exe#/dl.7z",
+    "hash": "fe9f237c428a8deb0faee6b7471cd95ca1e15bfa3d1076849d05c4dea5e6e6d2",
     "installer": {
         "script": [
             "if ([Environment]::Is64BitOperatingSystem) {",
