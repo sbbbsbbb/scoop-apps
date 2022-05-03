@@ -15,8 +15,8 @@
         "JAVA_HOME": "$dir"
     },
     "checkver": {
-        "url": "https://www.adobe.com/support/coldfusion/downloads.html",
-        "regex": "JAVA SE (11[\\d.]+)[^<]*"
+        "url": "https://master.dl.sourceforge.net/project/tomato-extra/apps/",
+        "regex": "jdk-(11.[\\d.]+)_windows-x64_bin.zip"
     },
     "autoupdate": {
         "architecture": {
