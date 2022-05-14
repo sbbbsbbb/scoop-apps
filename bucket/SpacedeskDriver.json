@@ -14,7 +14,7 @@
     },
     "checkver": {
         "url": "https://raw.githubusercontent.com/kkzzhizhou/scoop-zapps/master/versions/SpacedeskDriver.latest",
-        "regex": "v(.*).msi"
+        "regex": "64_v(.*).msi"
     },
     "autoupdate": {
         "architecture": {
