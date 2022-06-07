@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://cdn.azul.com/zulu/bin/zulu15.40.19-ca-fx-jre15.0.7-win_x64.zip",
-            "hash": "77f4445306df2ba66b2f8ecc12b759c67d8bf7acc071dd9c306492c7fcd35fbb",
+            "hash": "eacdb4e58cb612cc73b75ae88177fab8536d92800eb94b58a9379d79d1629b21",
             "extract_dir": "zulu15.40.19-ca-fx-jre15.0.7-win_x64"
         }
     },
