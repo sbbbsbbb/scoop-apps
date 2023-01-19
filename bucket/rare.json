@@ -1,23 +1,26 @@
 {
-    "homepage": "https://github.com/zix99/rare",
-    "description": "A file scanner/regex extractor and realtime summarizor.",
-    "license": "GPL-3.0-or-later",
-    "version": "0.3.0",
+    "version": "1.9.4",
+    "homepage": "https://github.com/Dummerle/Rare",
+    "description": "A graphical frontend for Legendary, the FOSS Epic Games Launcher alternative",
+    "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/zix99/rare/releases/download/0.3.0/rare_0.3.0_Windows_x86_64.zip",
-            "hash": "273ce10d26496e9a4913b3bb54921ea57a18b1e6c233e17ea9d8868e894fcfaa"
+            "url": "https://github.com/Dummerle/Rare/releases/download/1.9.4/Rare-Windows-1.9.4.msi",
+            "hash": "ae3a2e8e8499f961c9785f15a0cb0b8a6cd07e59546efa5ca10a8eb4ec45cdee"
         }
     },
     "bin": "rare.exe",
-    "checkver": {
-        "url": "https://github.com/zix99/rare/releases",
-        "regex": "rare_([\\d\\-rc.]+)_Windows_x86_64.zip"
-    },
+    "shortcuts": [
+        [
+            "rare.exe",
+            "Rare"
+        ]
+    ],
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/zix99/rare/releases/download/$version/rare_$version_Windows_x86_64.zip"
+                "url": "https://github.com/Dummerle/Rare/releases/download/$version/Rare-Windows-$version.msi"
             }
         }
     }
