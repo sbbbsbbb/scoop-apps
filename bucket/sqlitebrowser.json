@@ -1,7 +1,7 @@
 {
     "version": "3.13.0",
     "description": "DB Browser for SQLite (DB4S) project",
-    "homepage": "https://github.com/sqlitebrowser/sqlitebrowser",
+    "homepage": "https://sqlitebrowser.org/",
     "license": "MPL-2.0|GPL-3.0-or-later",
     "architecture": {
         "64bit": {
@@ -13,7 +13,6 @@
             "hash": "12c688c67acde2e76ff5d5a6c1dada854015f57c6b06c5378231fc357ddea47b"
         }
     },
-    "extract_dir": "DB Browser for SQLite",
     "bin": [
         "DB Browser for SQLite.exe",
         "DB Browser for SQLCipher.exe"
