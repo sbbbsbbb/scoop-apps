@@ -1,13 +1,13 @@
 {
     "##": "Check chromium.woolyss.com for different versions of Chromium releases.",
-    "version": "127.0.6533.100-r1313161",
+    "version": "128.0.6613.114-r1331488",
     "description": "Browser aiming for safer, faster, and more stable way for all users to experience the web.",
     "homepage": "https://www.chromium.org",
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v127.0.6533.100-r1313161/chrome.sync.7z",
-            "hash": "sha1:e7a721b2be9df86d49f29ad5ab4d69b67c780509"
+            "url": "https://github.com/Hibbiki/chromium-win64/releases/download/v128.0.6613.114-r1331488/chrome.sync.7z",
+            "hash": "sha1:8d3b738163ae0a66dc4cabb1cdcfe0e7ee893ad8"
         }
     },
     "extract_dir": "Chrome-bin",
