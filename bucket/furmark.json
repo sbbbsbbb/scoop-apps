@@ -1,34 +1,41 @@
 {
+    "version": "2.5.0.0",
+    "description": "A GPU Stress Test and OpenGL Benchmark",
     "homepage": "https://geeks3d.com/furmark/",
-    "version": "1.20.9.0",
     "license": "Freeware",
-    "url": "https://www.geeks3d.com/downloads/2019/FurMark_1.20.9.0_Setup.exe",
-    "hash": "16bea29f7e618ce71442586a3c71be580617ebfb8428bdb79d8b910b6d06416f",
-    "innosetup": true,
-    "bin": "FurMark.exe",
+    "architecture": {
+        "64bit": {
+            "url": "https://geeks3d.com/downloads/2024p/furmark2/FurMark_2.5.0.0_win64.zip",
+            "hash": "3aa869071d20fd909edce606d1ae994b3751d1fecabae5457bb918e315853c30",
+            "extract_dir": "FurMark_win64"
+        },
+        "32bit": {
+            "url": "https://gpumagick.com/downloads/files/2024/furmark2/FurMark_2.5.0.0_win32.zip",
+            "hash": "782dda32e30c930f77a4f199ed6d199565496c90200b373d10481a618cb11c4e",
+            "extract_dir": "FurMark_win32"
+        }
+    },
+    "bin": "furmark.exe",
     "shortcuts": [
         [
-            "FurMark.exe",
+            "FurMark_GUI.exe",
             "FurMark"
-        ],
-        [
-            "gpuz.exe",
-            "GPU-Z"
-        ],
-        [
-            "gpushark.bat",
-            "GPU Shark"
         ]
     ],
     "checkver": {
-        "url": "https://geeks3d.com/furmark/downloads/",
-        "re": "<b>Version ([\\d.]+) - (?<year>\\d{4})"
+        "url": "https://geeks3d.com/furmark/changelog/",
+        "regex": ">version (2\\.[\\d.]+) - (?<year>\\d+)"
     },
     "autoupdate": {
-        "url": "https://www.geeks3d.com/downloads/$matchYear/FurMark_$version_Setup.exe",
-        "hash": {
-            "url": "https://geeks3d.com/furmark/downloads/",
-            "find": "SHA256: ([a-fA-F0-9]{64})"
+        "architecture": {
+            "64bit": {
+                "url": "https://geeks3d.com/downloads/$matchYearp/furmark$majorVersion/FurMark_$version_win64.zip",
+                "extract_dir": "FurMark_win64"
+            },
+            "32bit": {
+                "url": "https://gpumagick.com/downloads/files/$matchYear/furmark$majorVersion/FurMark_$version_win32.zip",
+                "extract_dir": "FurMark_win32"
+            }
         }
     }
 }

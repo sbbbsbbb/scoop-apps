@@ -1,18 +1,20 @@
 {
+    "version": "1.11.1",
+    "description": "A free and open source, easy to use, and flexible level editor.",
     "homepage": "https://www.mapeditor.org/",
-    "description": "A flexible level editor",
-    "license": "GPL-2.0-only",
-    "version": "1.9.2",
+    "license": "GPL-2.0-only|BSD-2-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mapeditor/tiled/releases/download/v1.9.2/Tiled-1.9.2_Windows_x86_64.msi",
-            "hash": "e42459fbd83f641c1b52d5d905740344da7d1e3ef3c6ae033519b1a9382f148e"
+            "url": "https://github.com/mapeditor/tiled/releases/download/v1.11.1/Tiled-1.11.1_Windows-10+_x86_64.msi",
+            "hash": "9e397581c25a201b0f8121b3dfb9d7b3e3878feca0ff22c1345e2e0f98e64a1e"
+        },
+        "32bit": {
+            "url": "https://github.com/mapeditor/tiled/releases/download/v1.11.1/Tiled-1.11.1_Windows-7-8_x86.msi",
+            "hash": "e2084d2611145df699272f1a93e6f312fff5114952be4d775c18e1fa744391a4"
         }
     },
-    "pre_install": [
-        "Move-Item \"$dir\\PFiles\\Tiled\\*\" \"$dir\" -Force",
-        "Remove-Item \"$dir\\PFiles\" -Force -Recurse"
-    ],
+    "extract_dir": "PFiles/Tiled",
+    "bin": "tiled.exe",
     "shortcuts": [
         [
             "tiled.exe",
@@ -25,7 +27,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mapeditor/tiled/releases/download/v$version/Tiled-$version_Windows_x86_64.msi"
+                "url": "https://github.com/mapeditor/tiled/releases/download/v$version/Tiled-$version_Windows-10+_x86_64.msi"
+            },
+            "32bit": {
+                "url": "https://github.com/mapeditor/tiled/releases/download/v$version/Tiled-$version_Windows-7-8_x86.msi"
             }
         }
     }

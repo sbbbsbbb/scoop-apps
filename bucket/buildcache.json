@@ -1,14 +1,32 @@
 {
-    "description": "A simple compiler accelerator that caches and reuses build results to avoid unnecessary re-compilations, and thereby speeding up the build process.",
-    "homepage": "https://github.com/mbitsnbites/buildcache/",
-    "version": "0.28.2",
+    "version": "0.31.3",
+    "description": "An advanced compiler accelerator that caches and reuses build results to avoid unnecessary re-compilations, and thereby speeding up the build process.",
+    "homepage": "https://gitlab.com/bits-n-bites/buildcache",
     "license": "Zlib",
-    "url": "https://github.com/mbitsnbites/buildcache/releases/download/v0.13.1/buildcache-win-msvc.zip",
-    "hash": "567cdbee0b9bede2e9b15ccd1a83f317d37afc3ab52d70b4e71d19c19f8ce20a",
-    "extract_dir": "./bin",
-    "bin": "buildcache.exe",
-    "checkver": "github",
+    "architecture": {
+        "64bit": {
+            "url": "https://gitlab.com/bits-n-bites/buildcache/-/releases/v0.31.3/downloads/buildcache-windows.zip",
+            "hash": "ab9c3278aec54e984f7f94e78d5bd73d1dcde693e5851701b0b24e33daf8e60e"
+        }
+    },
+    "extract_dir": "buildcache",
+    "bin": "bin/buildcache.exe",
+    "shortcuts": [
+        [
+            "bin/buildcache.exe",
+            "buildcache"
+        ]
+    ],
+    "checkver": {
+        "url": "https://gitlab.com/api/v4/projects/49153623/releases/permalink/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "([\\d.]+)"
+    },
     "autoupdate": {
-        "url": "https://github.com/mbitsnbites/buildcache/releases/download/v0.13.1/buildcache-win-msvc.zip"
+        "architecture": {
+            "64bit": {
+                "url": "https://gitlab.com/bits-n-bites/buildcache/-/releases/v$version/downloads/buildcache-windows.zip"
+            }
+        }
     }
 }
