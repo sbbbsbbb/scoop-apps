@@ -1,15 +1,15 @@
 {
-    "version": "24.12.1",
+    "version": "20.08.1",
     "description": "Video editing software based on the MLT Framework, KDE and Qt",
     "homepage": "https://kdenlive.org",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://download.kde.org/stable/kdenlive/24.12/windows/kdenlive-24.12.1_standalone.exe#/dl.7z",
-            "hash": "0ad662e74f7149f241b6fa086d1ef20a4cd4217e74b2e2c23db86d0692b576c1"
+            "url": "https://files.kde.org/kdenlive/release/kdenlive-20.08.1_standalone.exe#/dl.7z",
+            "hash": "89425b304e24576901116d425bab6c2c74e21689f1a24646da3209e06eee3cca"
         }
     },
-    "extract_dir": "kdenlive-24.12.1_standalone",
+    "extract_dir": "kdenlive-20.08.1_standalone",
     "bin": "bin\\kdenlive.exe",
     "shortcuts": [
         [
@@ -18,13 +18,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://kdenlive.org/en/download/",
-        "regex": "kdenlive-([\\d\\w.-]+)_standalone\\.exe"
+        "url": "http://mirror.cc.columbia.edu/pub/software/kde-applicationdata/kdenlive/release/?C=M;O=D",
+        "regex": "kdenlive-([\\d.-]+)_standalone"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download.kde.org/stable/kdenlive/$majorVersion.$minorVersion/windows/kdenlive-$version_standalone.exe#/dl.7z"
+                "url": "https://files.kde.org/kdenlive/release/kdenlive-$version_standalone.exe#/dl.7z"
             }
         },
         "hash": {

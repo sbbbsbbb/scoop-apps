@@ -1,24 +1,24 @@
 {
-    "version": "3.0.21",
+    "version": "3.0.11",
     "description": "A free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.",
     "homepage": "https://www.videolan.org/",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://download.videolan.org/pub/vlc/3.0.21/win64/vlc-3.0.21-win64.7z",
-            "hash": "9d2b24d6bc4196b3da8d181a3878678ba272e2a7690321f8826da76a69b2fb9c"
+            "url": "https://download.videolan.org/pub/vlc/3.0.11/win64/vlc-3.0.11-win64.7z",
+            "hash": "4688e2bcc022ba32f25da9212ecfa57cda82474517de2a02b07bcfb701da6c8c"
         },
         "32bit": {
-            "url": "https://download.videolan.org/pub/vlc/3.0.21/win32/vlc-3.0.21-win32.7z",
-            "hash": "77b2a79c4baf0dcc7c453f74f29fbdb55d42c790d277b5f9e0dbed0f3abc0131"
+            "url": "https://download.videolan.org/pub/vlc/3.0.11/win32/vlc-3.0.11-win32.7z",
+            "hash": "ebcc628688f66961d9c68dbacc2a0f0da8c8357d4f1f081693a217f4708d971f"
         }
     },
-    "extract_dir": "vlc-3.0.21",
+    "extract_dir": "vlc-3.0.11",
     "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\portable\") -and (Test-Path \"$env:APPDATA\\vlc\")) {",
-        "    info \"Copying old '$env:APPDATA\\vlc' to '$persist_dir\\portable'\"",
-        "    ensure \"$dir\\portable\\vlc\" | Out-Null",
-        "    Copy-Item \"$env:APPDATA\\vlc\\*\" \"$dir\\portable\" -Recurse -Force",
+        "if (!(Test-Path \"$persist_dir\\portable\") -and (Test-Path \"$Env:AppData\\vlc\")) {",
+        "    Write-Host -F yellow \"Copying old '$Env:AppData\\vlc' to '$persist_dir\\portable'\"",
+        "    New-Item \"$dir\\portable\\vlc\" -ItemType 'Directory' -Force | Out-Null",
+        "    Copy-Item \"$Env:AppData\\vlc\\*\" \"$dir\\portable\" -Recurse -Force",
         "    Move-Item \"$dir\\portable\\vlc-qt-interface.ini\" \"$dir\\portable\\vlc\"",
         "}"
     ],
