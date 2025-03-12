@@ -1,17 +1,42 @@
 {
-    "version": "2.3.0",
-    "description": "The Universal WebAssembly Runtime supporting WASI and Emscripten",
-    "homepage": "https://github.com/wasmerio/wasmer",
+    "version": "v5.0.4",
+    "description": "The leading WebAssembly Runtime supporting WASI and Emscripten",
+    "homepage": "https://wasmer.io/",
     "license": "MIT",
-    "url": "https://github.com/wasmerio/wasmer/releases/download/2.3.0/wasmer-windows.exe",
-    "hash": "b414def96b2e5718f6d87702819d6b74cbc4e53fa7cc2950eb87ec92e60710ec",
-    "bin": [
-        "bin/wapm.exe",
-        "bin/wasmer.exe"
-    ],
     "innosetup": true,
-    "checkver": "github",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wasmerio/wasmer/releases/download/v5.0.4/wasmer-windows.exe",
+            "hash": "5788c3d47123af43599adb6c9033b36736e39e220f248f36fa798f6112af7696"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\wapm.toml\")) {",
+        "    New-Item -Force -Path \"$persist_dir\\wapm.toml\" -ItemType File -Value \"[registry]`nurl = 'https://registry.wapm.io'\" | Out-Null",
+        "}"
+    ],
+    "env_set": {
+        "WASMER_DIR": "$dir",
+        "WASMER_CACHE_DIR": "$dir\\cache"
+    },
+    "bin": [
+        "bin\\wax.cmd",
+        "bin\\wapm.exe",
+        "bin\\wasmer.exe"
+    ],
+    "persist": [
+        "globals",
+        "wapm.toml"
+    ],
+    "checkver": {
+        "github": "https://github.com/wasmerio/wasmer",
+        "regex": "tag/([\\w.-]+)"
+    },
     "autoupdate": {
-        "url": "https://github.com/wasmerio/wasmer/releases/download/$version/wasmer-windows.exe"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wasmerio/wasmer/releases/download/$version/wasmer-windows.exe"
+            }
+        }
     }
 }
