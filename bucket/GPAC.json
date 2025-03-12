@@ -1,15 +1,16 @@
 {
     "homepage": "http://gpac.io",
-    "version": "1.0.1",
+    "description": "Multimedia framework developed for research and academic purposes",
     "license": "LGPL-2.1",
+    "version": "2.2.1",
     "architecture": {
         "64bit": {
-            "url": "http://download.tsi.telecom-paristech.fr/gpac/release/1.0.1/gpac-1.0.1-rev0-gd8538e8a-master-x64.exe#/dl.7z",
-            "hash": "5c7e615f928a286eaec97cfbd32e6445605b6f04f5f4ef0d2108e57eff8a0fe6"
+            "url": "http://download.tsi.telecom-paristech.fr/gpac/release/2.2.1/gpac-2.2.1-rev0-gb34e3851-release-2.2-x64.exe#/dl.7z",
+            "hash": "e50149fd8903999491d833a474b2cc656d9022be2effa6797029969368fbafe5"
         },
         "32bit": {
-            "url": "http://download.tsi.telecom-paristech.fr/gpac/release/1.0.1/gpac-1.0.1-rev0-gd8538e8a-master-win32.exe#/dl.7z",
-            "hash": "2ef807be236cbe22945d4c62ad3c99c920013ac344f38f981ed067935ae90fdb"
+            "url": "http://download.tsi.telecom-paristech.fr/gpac/release/2.2.1/gpac-2.2.1-rev0-gb34e3851-release-2.2-win32.exe#/dl.7z",
+            "hash": "f8166be45b93113f94814c3747eef900be7c216087fb56e1234f101dd1e784d7"
         }
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$TEMP\", \"$dir\\Uninstall.exe\" -Force -Recurse",
@@ -30,15 +31,15 @@
     ],
     "checkver": {
         "url": "https://gpac.wp.imt.fr/downloads/",
-        "regex": "/gpac/release/([\\d.]+)/gpac-(?<rev>[\\d\\w.-]+)-master"
+        "regex": "/gpac/release/([\\d.]+)/gpac-(?<rev>[\\d\\w.-]+)-release"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://download.tsi.telecom-paristech.fr/gpac/release/$version/gpac-$matchRev-master-x64.exe#/dl.7z"
+                "url": "http://download.tsi.telecom-paristech.fr/gpac/release/$version/gpac-$matchRev-release-$majorVersion.$minorVersion-x64.exe#/dl.7z"
             },
             "32bit": {
-                "url": "http://download.tsi.telecom-paristech.fr/gpac/release/$version/gpac-$matchRev-master-win32.exe#/dl.7z"
+                "url": "http://download.tsi.telecom-paristech.fr/gpac/release/$version/gpac-$matchRev-release-$majorVersion.$minorVersion-win32.exe#/dl.7z"
             }
         }
     }

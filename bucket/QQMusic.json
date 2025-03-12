@@ -1,10 +1,10 @@
 {
     "homepage": "https://y.qq.com/",
     "description": "The official QQ Music client.",
-    "version": "18.44.0",
-    "license": "Freeware",
-    "url": "https://dldir1.qq.com/music/clntupate/QQMusic_YQQWinPCDL.exe#/dl.7z",
-    "hash": "5c51bed806abfc3c29ba6bcf92a9636bd9d1df81d36168582e7fecf55ba2716f",
+    "version": "21.11.0",
+    "license": "Proprietary",
+    "url": "https://dldir1v6.qq.com/music/clntupate/QQMusic_Setup_2111.exe#/dl.7z",
+    "hash": "9e7c35a6350101127025e29ba5ed816d851dce0166739909e72c2ca760a43df5",
     "shortcuts": [
         [
             "QQMusic.exe",
@@ -16,7 +16,7 @@
         "regex": "Windows PC <span class=\"product_list__version\">最新版:([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://dldir1.qq.com/music/clntupate/QQMusic_YQQWinPCDL.exe#/dl.7z"
+        "url": "https://dldir1v6.qq.com/music/clntupate/QQMusic_Setup_$majorVersion$minorVersion.exe#/dl.7z"
     },
     "notes": "We don't persist your QQMusic data, they are still storaged in '%LOCALAPPDATA%\\Tencent\\QQMusic'."
 }
