@@ -1,20 +1,32 @@
 {
-    "version": "1.3.5",
-    "description": "A Windows application that helps downloading albums from bandcamp.com.",
+    "version": "1.5.2",
+    "description": "A Windows app used to download albums from Bandcamp.",
     "homepage": "https://github.com/Otiel/BandcampDownloader",
     "license": "MIT",
-    "url": "https://github.com/Otiel/BandcampDownloader/releases/download/v1.3.5/BandcampDownloader.zip",
-    "hash": "b96f0e098ebbf9c5f7205fb7d576a64ceb1bb89642ee1192be098d831b1a7185",
-    "bin": "BandcampDownloader.exe",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Otiel/BandcampDownloader/releases/download/v1.5.2/BandcampDownloader.zip",
+            "hash": "c7a1711fc1041d07e5b8bd8367a23bf23220e7a10d6439d4233817794c3682ac"
+        }
+    },
+    "pre_install": [
+        "if(!(Test-Path \"$persist_dir\\BandcampDownloader.ini\")) {",
+        "    Set-Content -Path \"$dir\\BandcampDownloader.ini\" -Value 'CheckForUpdates=false' -Encoding Ascii",
+        "}"
+    ],
     "shortcuts": [
         [
             "BandcampDownloader.exe",
             "Bandcamp Downloader"
         ]
     ],
+    "persist": "BandcampDownloader.ini",
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/Otiel/BandcampDownloader/releases/download/v$version/BandcampDownloader.zip",
-        "hash": "$url.sha256"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Otiel/BandcampDownloader/releases/download/v$version/BandcampDownloader.zip"
+            }
+        }
     }
 }
