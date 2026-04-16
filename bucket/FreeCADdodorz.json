@@ -7,7 +7,7 @@
         "64bit": {
             "url": "https://github.com/FreeCAD/FreeCAD/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311.7z",
             "hash": "aef51acb6725d5667bbae73494d04794a1e1725e17c6589650b044c15808144f",
-            "extract_dir": "FreeCAD-1.1.1-Windows-x86_64-py311"
+            "extract_dir": "FreeCAD_1.1.1-Windows-x86_64-py311"
         },
         "32bit": {
             "url": "https://github.com/FreeCAD/FreeCAD/releases/download/0.18.4/FreeCAD-0.18.4.980bf90-WIN-x32-portable.7z",
