@@ -1,5 +1,5 @@
 {
-    "version": "0.12.0-1472",
+    "version": "0.13.0-669",
     "description": "Vim fork focused on extensibility and usability",
     "homepage": "https://neovim.io",
     "license": {
@@ -12,13 +12,18 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip",
-            "hash": "628cf7c2b1bf7d101293c622e32ca0e824a15d2b881e981ba7163dd6ab6644b7"
+            "hash": "73000d3555641c86c4c65870842166bf4b92bebcfaee592a8ba5d986a520b653",
+            "extract_dir": "nvim-win64"
+        },
+        "arm64": {
+            "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win-arm64.zip",
+            "hash": "98c2e488425470e150128948eb0b6b5e33021b1d8a030b0f78acf759183969c7",
+            "extract_dir": "nvim-win-arm64"
         }
     },
-    "extract_dir": "nvim-win64",
     "bin": "bin\\nvim.exe",
     "checkver": {
-        "url": "https://api.github.com/repositories/16408992/releases/tags/nightly",
+        "github": "https://api.github.com/repos/neovim/neovim/releases/tags/nightly",
         "jsonpath": "$.body",
         "regex": "NVIM v([\\d.]+)-dev-([a-f\\d]+)",
         "replace": "${1}-${2}"
@@ -26,10 +31,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip",
-                "hash": {
-                    "url": "$url.sha256sum"
-                }
+                "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/neovim/neovim/releases/download/nightly/nvim-win-arm64.zip"
             }
         }
     }
