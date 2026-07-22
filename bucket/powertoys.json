@@ -1,5 +1,5 @@
 {
-    "version": "0.95.0",
+    "version": "0.100.2",
     "description": "A set of utilities for power users to tune and streamline their Windows experience for greater productivity.",
     "homepage": "https://github.com/microsoft/PowerToys",
     "license": "MIT",
@@ -12,26 +12,28 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.95.0/PowerToysUserSetup-0.95.0-x64.exe",
-            "hash": "f2b57f03575591591192dc486162f5fa113079f515a48e9ed6b3e2abe0fe81e3"
+            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.100.2/PowerToysUserSetup-0.100.2-x64.exe",
+            "hash": "945fdf327e4d38e4ced61b0727b7ab8a1222958782982052989ddf7cb7096f62"
         },
         "arm64": {
-            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.95.0/PowerToysUserSetup-0.95.0-arm64.exe",
-            "hash": "fcc6a34edc76366bfc01723a1b3b4a68233727f5501308198130feab84cdc533"
+            "url": "https://github.com/microsoft/PowerToys/releases/download/v0.100.2/PowerToysUserSetup-0.100.2-arm64.exe",
+            "hash": "5554984d72c30d5fd26355569d1ca8d63b74f0062ee4e59e0186e28216c837ae"
         }
     },
     "installer": {
         "script": [
             "Expand-DarkArchive \"$dir\\$fname\" \"$dir\\.tmp\"",
-            "$xml = [xml](Get-Content -Raw \"$dir\\.tmp\\UX\\manifest.xml\" -Encoding utf8)",
-            "$xml.BurnManifest.Payload | Where-Object { $_.FilePath.EndsWith(\".msi\") } | ForEach-Object {",
-            "    if ($($_.FilePath) -like \"*wix5*.msi\") {",
-            "        Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\$($_.FilePath)\" \"$dir\" -ExtractDir 'LocalApp\\PowerToys'",
-            "    } else {",
-            "        Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\$($_.FilePath)\" \"$dir\" -ExtractDir 'PowerToys'",
-            "    }",
+            "Get-ChildItem \"$dir\\.tmp\\AttachedContainer\\PowerToysUserSetup*.msi\" | Rename-Item -NewName 'PowerToysSetup.msi' -Force",
+            "$ver = ([xml](Get-Content -Raw \"$dir\\.tmp\\UX\\manifest.xml\" -Encoding utf8)).BurnManifest.EngineVersion",
+            "if (($null -ne $ver) -and ($ver -like \"5.*\")) {",
+            "    Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'LocalApp\\PowerToys'",
+            "} else {",
+            "    Expand-MsiArchive \"$dir\\.tmp\\AttachedContainer\\PowerToysSetup.msi\" \"$dir\" -ExtractDir 'PowerToys'",
             "}",
-            "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse"
+            "Remove-Item \"$dir\\.tmp\", \"$dir\\$fname\" -Force -Recurse",
+            "Get-Content \"$dir\\WinUI3Apps\\hardlinks.txt\" -ErrorAction Ignore | ForEach-Object {",
+            "    Copy-Item \"$dir\\$_\" \"$dir\\WinUI3Apps\\$_\" -Force",
+            "}"
         ]
     },
     "post_install": [
@@ -78,7 +80,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/microsoft/PowerToys/releases",
+        "github": "https://api.github.com/repos/microsoft/PowerToys/releases",
         "jsonpath": "$[0].assets[*].browser_download_url",
         "regex": "/releases/download/(?<tag>[\\w.]+)/PowerToysUserSetup-([\\d.]+)-x64\\.exe"
     },
